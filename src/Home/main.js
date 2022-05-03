@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import styles from './mainPage.module.css';
 import Note from './modules/eachNote';
 import Header from './modules/header/header';
@@ -10,6 +10,13 @@ const MainPage = () => {
     const [resultNote, setResultNote] = useState("");
     const [bgColor, setBgColor] = useState("#000000");
     const [color, setColor] = useState("#ffffff");
+    const ref1 = useRef();
+    const ref2 = useRef();
+
+    const resetInput = () => {
+        ref1.current.value = '';
+        ref2.current.value = '';
+    }
 
     const save = () => {
         const newSchema = {
@@ -19,28 +26,38 @@ const MainPage = () => {
             color: color,
         }
         setAllNotes(allNotes => [...allNotes, newSchema]);
-        
     }
+
     console.log(allNotes);
+
+    const deleteNotes = (id) => {
+        console.log(id);
+        setAllNotes(result => {
+            return allNotes.filter((note, index)=>{
+                return index !== id
+            })
+        }
+    )}
 
     useEffect(() => {
         localStorage.setItem("storage", JSON.stringify(allNotes))
     }, [allNotes]);
+
     
     return (
         <div className={styles.MainPage}>
             <Header />
             <div className={styles.inputDiv}>
-                <input type="text" class={styles.input} id={styles.inputTitle} onInput={event => setResultTitle(event.target.value)} placeholder="Title" />
-                <input type="text" class={styles.input} onInput={event => setResultNote(event.target.value)} placeholder="Add Note ..." />
+                <input type="text" class={styles.input} id={styles.inputTitle} onInput={event => setResultTitle(event.target.value)} placeholder="Title" ref={ref1}/>
+                <input type="text" class={styles.input} onInput={event => setResultNote(event.target.value)} placeholder="Add Note ..." ref={ref2}/>
                 <input type="color" onInput={event => setBgColor(event.target.value)}/>
-                <input type="color" onInput={event => setColor(event.target.value)}/>
-                <button id={styles.submit} onClick={save}> Add</button>
+                <input type="color" onInput={event => setColor(event.target.value)} value="#ffffff"/>
+                <button id={styles.submit} onClick={() => {save(); resetInput()}}> Add</button>
             </div>
 
             {
                 allNotes.map((notesObj, index) => {
-                    return <Note title={notesObj.title} note={notesObj.note} bgColor={notesObj.bgColor} color={notesObj.color} keyis={index} />
+                    return <Note title={notesObj.title} note={notesObj.note} bgColor={notesObj.bgColor} color={notesObj.color} onDelete={deleteNotes} key={index} id={index} />
                 })
             }
             <CopyRight />
