@@ -11,8 +11,8 @@ const Note = (props) => {
     return(
         <div className={styles.note} style={{backgroundColor: props.bgColor}} key={props.key}>
             <img src={closeBtn} alt="close" className={styles.closeBtn} onClick={close}/>
-            <h3 className="title" style={{color: props.color}}>{props.title}</h3>
-            <p className="text" style={{color: props.color}} >{props.note}</p>
+            <p className={styles.header} style={{color: props.color}}>{props.title}</p>
+            <p className={styles.text} style={{color: props.color}} >{props.note}</p>
         </div>
     );
 }
