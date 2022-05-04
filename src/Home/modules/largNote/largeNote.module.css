@@ -1,0 +1,32 @@
+.openedContainer{
+    background-color: black;
+    width: 400px;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    display: none;
+}
+.closeBtn{
+    width: 30px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.data{
+    display: felx;
+    flex-direction: column;
+    padding: 1rem 15px;
+}
+.data>h2{
+    font-size: 2rem;
+    margin: 0;
+    margin-top: 0.75rem;
+}
+.data>p{
+    font-size: 1.25rem;
+}

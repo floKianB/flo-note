@@ -1,15 +1,16 @@
 .MainPage{
     display: flex;
     flex-direction: column;
-    padding: 0 2rem;
+    padding: 0px 2rem;
+    position: relative;
     
 }
 
 .inputDiv{
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 2.5rem;
     gap: 1.5rem;
 }
@@ -18,7 +19,7 @@
     background-color: transparent;
     border: none;
     border-bottom: solid 1px black;
-    width: 400px;
+    width: 60%;
     font-size: 1.25rem;
     font-weight: 300;
     outline: none;
@@ -37,7 +38,7 @@
     color: white;
     border: solid 1px;
     font-size: 1rem;
-    padding: 5px 10px;
+    padding: 5px 20px;
     transition: all 0.25s;
 }
 #submit:hover, #submit:focus, #submit:active{
@@ -54,3 +55,6 @@
     display: flex;
     margin-top: 2rem;
 }
+
+
+
