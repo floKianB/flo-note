@@ -1,0 +1,38 @@
+.inputDiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    gap: 1.5rem;
+}
+
+.input{
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px black;
+    width: 60%;
+    font-size: 1.25rem;
+    font-weight: 300;
+    outline: none;
+}
+#inputTitle{
+    width: 100px;
+}
+.input::placeholder{
+    color: black;
+}
+
+
+#submit{
+    border-radius: 12px;
+    background-color: black;
+    color: white;
+    border: solid 1px;
+    font-size: 1rem;
+    padding: 5px 20px;
+    transition: all 0.25s;
+}
+#submit:hover, #submit:focus, #submit:active{
+    background-color: green;
+}
