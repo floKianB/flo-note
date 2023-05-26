@@ -44,10 +44,9 @@ const MainPage = () => {
     )}
 
     const openNote = (id) => {
-        
         setOpendId(id);
         setBgBlur(3);
-        setNoteOpen("flex");
+        setNoteOpen("block");
     }
 
     const closeNote = () => {
@@ -84,7 +83,6 @@ const MainPage = () => {
             </div>
 
             <LargeNote openStatus={noteOpen} closeNote={closeNote} id={openedId}/>
-
             <CopyRight />
         </>
 

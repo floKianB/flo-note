@@ -29,7 +29,7 @@ const LargeNote = (props) => {
             <img src={closeBtn} className={styles.closeBtn} alt="Close" onClick={closeNote}/>
             <div className={styles.data}>
                 <h2 style={{color: `${fontColor}`}}>{title}</h2>
-                <p style={{color: `${fontColor}`}}>{note}</p>
+                <p style={{color: `${fontColor}`}} className={styles.note}>{note}</p>
             </div>
         </div>
     );
