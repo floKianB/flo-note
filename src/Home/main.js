@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './mainPage.module.css';
 import Note from './modules/eachNote/eachNote';
 import Header from './modules/header/header';
@@ -19,13 +19,15 @@ const MainPage = () => {
 
 
     const save = () => {
-        const newSchema = {
-            title: resultTitle,
-            note: resultNote,
-            bgColor: bgColor,
-            color: color,
+        if(resultTitle !== '' && resultNote !== '') {
+            const newSchema = {
+                title: resultTitle,
+                note: resultNote,
+                bgColor: bgColor,
+                color: color,
+            }
+            setAllNotes(allNotes => [...allNotes, newSchema]);
         }
-        setAllNotes(allNotes => [...allNotes, newSchema]);
     }
 
     console.log(allNotes);

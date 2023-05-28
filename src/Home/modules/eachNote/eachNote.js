@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './eachNote.module.css';
-import deleteBtn from '../../source/delete.png';
+import { AiFillCloseCircle } from 'react-icons/ai';
+
 
 const Note = (props) => {
     const open = () => {
@@ -11,7 +12,7 @@ const Note = (props) => {
     }
     return(
         <div className={styles.note} style={{backgroundColor: props.bgColor}} key={props.key}>
-            <img src={deleteBtn} alt="delete" className={styles.deleteBtn} onClick={close}/>
+            <AiFillCloseCircle className={styles.deleteBtn} onClick={close}/>
             <p className={styles.header} style={{color: props.color}} onClick={open} >{props.title}</p>
             <p className={styles.text} style={{color: props.color}}>{props.note.length > 27 ? props.note.slice(0, 27).concat('...') : props.note}</p>
         </div>
