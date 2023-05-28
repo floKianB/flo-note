@@ -12,29 +12,37 @@
 }
 
 .inputDiv{
+    z-index: 999;
+    max-width: 1300px;
+    max-height: 321px;
+    min-height: 321px;
     position: absolute;
-    top: 75.93vh;
+    top: calc(100vh - 310px);
     left: 0;
     right: 0;
+    bottom: 0;
     transform: translateY(-50%);
     width: 90%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
-    grid-template-rows: 4fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     align-items: center;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     background-color: black;
-    padding: 20px 30px;
-    transition: all 4s;
+    padding: 30px 45px;
+    padding-bottom: 10px;
+    animation: comeIn 1s;
+}
+
+@keyframes comeIn {
+    from {top: 100vh;}
+    to {top: calc(100vh - 310px)}
 }
 
 .inputNoDiv{
+    top: 100vh;
     display: none;
-    top: 90vh;
-    transition: all 4s;
-
 }
 
 .textInputs{
@@ -44,7 +52,8 @@
     justify-content: space-evenly;
     font-family: sans-serif;
     height: 90%;
-    width: 80%;
+    resize: none;
+    width: 85%;
     gap: 30px;
 
 }
@@ -63,8 +72,10 @@
     width: 70%;
 }
 #inputNote{
+    padding: 5px;
     border: solid 1px rgb(255, 255, 255);
     height: 150px;
+    font-family: 'Courier New', Courier, monospace;
 }
 .input::placeholder{
     color: rgb(255, 255, 255);
@@ -81,13 +92,14 @@
 
 #submit{
     border-radius: 12px;
-    background-color: black;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     border: solid 1px;
-    font-size: 1rem;
-    padding: 5px 20px;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    padding: 10px 20px;
     transition: all 0.25s;
-    width: min-content;
+    width: fit-content;
 }
 #submit:hover, #submit:focus, #submit:active{
     background-color: green;

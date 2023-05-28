@@ -29,7 +29,7 @@ function NewNoteForm({setResultTitle, setResultNote, setBgColor, setColor, save}
                 <label>Text Color</label>
                 <TwitterPicker colors={['#0a0a0a', '#1f2aab', '#701a91', '#268717', '#1c7980', '#961533', '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF']} onChange={(color) => setColor(color.hex)} />
             </div>
-            <button id={styles.submit} onClick={() => {save(); resetInput()}}> Add</button>
+            <button id={styles.submit} onClick={() => {save(); resetInput()}}>NEW NOTE</button>
         </div>
         </>
         
