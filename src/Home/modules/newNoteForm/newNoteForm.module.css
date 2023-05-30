@@ -40,20 +40,21 @@
 }
 @media only screen and (max-width: 450px) {
     .inputDiv{
-        position: relative;
+        position: absolute;
         transform: none;
         top: 0;
         bottom: 0;
         min-height: 100vh;
-        max-height: 100vh;
+        max-height: fit-content;
         min-width: 100vw;
         display: flex;
         flex-direction: column;
         justify-content: baseline;
         gap: 40px;
         align-items: center;
-        padding: 0px;
+        padding: 0;
         padding-top: 50px;
+        padding-bottom: 40px;
         margin: 0;
         border-radius: 0;
         animation: none;
