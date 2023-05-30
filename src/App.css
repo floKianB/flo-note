@@ -4,7 +4,12 @@ html, body {
     margin: 0;
     overflow-y: hidden;
     overflow-x: hidden;
-
+}
+@media only screen and (max-width: 425px) {
+    html, body {
+        overflow-y: auto;
+        overflow-x: auto;
+    }
 }
 
 .App{
