@@ -15,7 +15,7 @@ function NewNoteForm({setResultTitle, setResultNote, setBgColor, setColor, save}
     }
     return (
         <>
-        <button onClick={() => {setNewnNoteStatus(!newNoteStatus); console.log(newNoteStatus);}} className={styles.addButton}>{newNoteStatus ? '-' : '+'}</button>
+        <button onClick={() => {setNewnNoteStatus(!newNoteStatus); console.log(newNoteStatus);}} className={styles.addButton} style={!newNoteStatus ? {backgroundColor: 'black'} : {backgroundColor: 'red'}}>{newNoteStatus ? '-' : '+'}</button>
         <div className={newNoteStatus === true ? styles.inputDiv : styles.inputNoDiv }>
             <div className={styles.textInputs}>
                 <input type="text" class={styles.input} id={styles.inputTitle} onInput={event => setResultTitle(event.target.value)} placeholder="Title" ref={refTitle}/>

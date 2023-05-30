@@ -1,13 +1,13 @@
 .addButton{
     position: absolute;
+    z-index: 1000;
     top:15px;
     right: 15px;
-    background-color: black;
     color: white;
     border-radius: 50%;
     font-size: 2rem;
-    width: 50px;
-    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
     border: none;
 }
 
@@ -36,16 +36,18 @@
 }
 @media only screen and (max-width: 450px) {
     .inputDiv{
-        min-height: 650px;
-        top: calc(100vh - 450px);
-        max-width: 95%;
-        min-width: 95%;
+        position: absolute;
+        min-height: calc(100vh - 80px);
+        min-width: 100vw;
+        top: calc(50vh - 40px);
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
         padding: 3px;
-        animation: comeInMobile 1s;
+        margin: 0 auto;
+        border-radius: 0;
+        animation: none;
     }
 }
 
@@ -53,10 +55,7 @@
     from {top: 100vh;}
     to {top: calc(100vh - 310px)}
 }
-@keyframes comeInMobile {
-    from {top: 100vh;}
-    to {top: calc(100vh - 450px);}
-}
+
 
 
 .inputNoDiv{
