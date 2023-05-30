@@ -5,10 +5,9 @@ html, body {
     overflow-y: hidden;
     overflow-x: hidden;
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 450px) {
     html, body {
-        overflow-y: auto;
-        overflow-x: auto;
+        overflow-y: scroll;
     }
 }
 

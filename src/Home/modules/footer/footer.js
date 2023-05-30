@@ -3,6 +3,7 @@ import React from 'react';
 const CopyRight = () => {
     const footer = {
         width: '100%',
+        minHeight: '40px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
