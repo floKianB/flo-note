@@ -40,7 +40,6 @@
         top: calc(100vh - 450px);
         max-width: 95%;
         min-width: 95%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
